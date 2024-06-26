@@ -3,7 +3,7 @@
         <ng-template mat-tab-label>
             <span>{{tab}}</span>
         </ng-template>
-    <app-child [isActive]="tabname.isActive" [data]="data"></app-child>
+    <app-child [isActive]="tabname.isActive" [data]="data[i]"></app-child>
     </mat-tab>
 </mat-tab-group>
 <button (click)="hitinit()">Hit</button>

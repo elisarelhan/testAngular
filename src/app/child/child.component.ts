@@ -31,5 +31,6 @@ id:any
   }
   hitinit(){
     this.data={id:"1",name:"sample1"}
+    this.method()
   }
 }
