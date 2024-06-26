@@ -6,26 +6,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent implements OnInit {
-tabs=['tab1','tab2']
-data={}
+  tabs=['tab1','tab2']
+  data: any=[{}, {}];
+  index=  0;
   constructor() { }
 
   ngOnInit(): void {
-    this.data={id:"tab1"}
+    this.data[0] = {id:"tab1"};
   }
   tabChange(event:any){
     console.log(event)
-    let index=event.index
+    this.index=event.index
     this.data={}
-    // if (this.tabs[index]==="tab1"){
-    //  this. data={id:"tab1",name:index}
-    // }
-    // else if(this.tabs[index]==="tab2"){
-    //   this. data={id:"tab2",name:index+'a'}
-    // }
+    if (this.tabs[this.index]==="tab1"){
+     this. data[0]={id:"tab1",name:this.index}
+    }
+    else if(this.tabs[this.index]==="tab2"){
+      this. data[1]={id:"tab2",name:this.index+'a'}
+    }
   }
   hitinit(){
-    this.data={id:"1",name:"sample"}
+    this.data[this.index] = {id:"1",name:"sample"}
   }
 
 }
